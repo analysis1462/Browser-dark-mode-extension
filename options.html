@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暗色模式扩展 - 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>暗色模式扩展设置</h1>
+      <p class="subtitle">自定义您的暗色模式体验</p>
+    </header>
+    
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="general">通用设置</button>
+      <button class="nav-tab" data-tab="appearance">外观设置</button>
+      <button class="nav-tab" data-tab="sites">网站管理</button>
+    </nav>
+    
+    <main class="content">
+      <section id="general" class="tab-content active">
+        <div class="settings-group">
+          <h2>基本设置</h2>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="autoEnable">
+              <span class="label-text">默认启用暗色模式</span>
+            </label>
+            <p class="setting-desc">访问新网站时自动启用暗色模式</p>
+          </div>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <input type="checkbox" id="useSystemTheme">
+              <span class="label-text">跟随系统主题</span>
+            </label>
+            <p class="setting-desc">根据系统的亮色/暗色模式自动切换</p>
+          </div>
+          
+        </div>
+      </section>
+      
+      <section id="appearance" class="tab-content">
+        <div class="settings-group">
+          <h2>过滤器设置</h2>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <span class="label-text">默认亮度</span>
+              <span class="setting-value" id="defaultBrightnessValue">90%</span>
+            </label>
+            <input type="range" id="defaultBrightness" min="50" max="150" value="90" class="setting-slider">
+          </div>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <span class="label-text">默认对比度</span>
+              <span class="setting-value" id="defaultContrastValue">100%</span>
+            </label>
+            <input type="range" id="defaultContrast" min="50" max="150" value="100" class="setting-slider">
+          </div>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <span class="label-text">默认灰度</span>
+              <span class="setting-value" id="defaultGrayscaleValue">0%</span>
+            </label>
+            <input type="range" id="defaultGrayscale" min="0" max="100" value="0" class="setting-slider">
+          </div>
+          
+          <div class="setting-item">
+            <label class="setting-label">
+              <span class="label-text">默认褐色调</span>
+              <span class="setting-value" id="defaultSepiaValue">0%</span>
+            </label>
+            <input type="range" id="defaultSepia" min="0" max="100" value="0" class="setting-slider">
+          </div>
+        </div>
+      </section>
+      
+      <section id="sites" class="tab-content">
+        <div class="settings-group">
+          <h2>白名单 (始终启用暗色模式)</h2>
+          <div class="list-controls">
+            <input type="text" id="whitelistInput" placeholder="输入网站域名，例如: example.com" class="list-input">
+            <button id="addWhitelist" class="btn btn-primary">添加</button>
+          </div>
+          <ul id="whitelist" class="site-list"></ul>
+        </div>
+        
+        <div class="settings-group">
+          <h2>黑名单 (从不启用暗色模式)</h2>
+          <div class="list-controls">
+            <input type="text" id="blacklistInput" placeholder="输入网站域名，例如: example.com" class="list-input">
+            <button id="addBlacklist" class="btn btn-primary">添加</button>
+          </div>
+          <ul id="blacklist" class="site-list"></ul>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <button id="resetSettings" class="btn btn-secondary">恢复默认设置</button>
+      <button id="saveSettings" class="btn btn-primary">保存设置</button>
+    </footer>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暗色模式扩展</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">暗色模式</h1>
+      <button id="openSettings" class="settings-btn" title="设置">⚙️</button>
+    </header>
+    
+    <div class="toggle-section">
+      <div class="toggle-wrapper">
+        <span class="toggle-label">启用暗色模式</span>
+        <label class="switch">
+          <input type="checkbox" id="enableToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="quick-settings">
+      <div class="section-title">快速调节</div>
+      
+      <div class="slider-group">
+        <label>
+          <span>亮度</span>
+          <input type="range" id="brightness" min="50" max="150" value="90">
+          <span class="value" id="brightnessValue">90%</span>
+        </label>
+      </div>
+      
+      <div class="slider-group">
+        <label>
+          <span>对比度</span>
+          <input type="range" id="contrast" min="50" max="150" value="100">
+          <span class="value" id="contrastValue">100%</span>
+        </label>
+      </div>
+      
+      <div class="slider-group">
+        <label>
+          <span>反转</span>
+          <input type="range" id="invert" min="0" max="100" value="100">
+          <span class="value" id="invertValue">100%</span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="site-controls">
+      <div class="section-title">当前网站</div>
+      <div class="site-buttons">
+        <button id="addToWhitelist" class="btn btn-success" title="始终启用暗色模式">
+          <span>✓</span> 加入白名单
+        </button>
+        <button id="addToBlacklist" class="btn btn-danger" title="从不启用暗色模式">
+          <span>✕</span> 加入黑名单
+        </button>
+      </div>
+      <div id="currentSite" class="current-site"></div>
+      <div id="siteStatus" class="site-status" style="display: none;"></div>
+      <div id="notification" class="notification" style="display: none;"></div>
+    </div>
+    
+
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
